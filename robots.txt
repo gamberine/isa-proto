@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Prototipo publico apenas para visualizacao direta.
+# Conteudo protegido por direitos autorais - Isa Engenharia.
