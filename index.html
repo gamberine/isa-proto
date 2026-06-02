@@ -16,9 +16,9 @@
 <meta property="og:title" content="Isa Engenharia | Automação e Engenharia"/>
 <meta property="og:description" content="Soluções de automação, engenharia elétrica e integração de sistemas industriais."/>
 <meta property="og:url" content="https://gamberine.github.io/isa-proto/"/>
-<meta property="og:image" content="https://gamberine.github.io/isa-proto/isa-proto.png"/>
+<meta property="og:image" content="https://gamberine.github.io/isa-proto/hero-banner.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://gamberine.github.io/isa-proto/isa-proto.png"/>
+<meta name="twitter:image" content="https://gamberine.github.io/isa-proto/hero-banner.png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
@@ -33,6 +33,23 @@
         }
         .hero-gradient {
             background: linear-gradient(to right, rgba(22, 28, 39, 0.95) 20%, rgba(22, 28, 39, 0.6) 100%);
+        }
+        .hero-banner {
+            height: min(100vh, 1080px);
+            min-height: 640px;
+            background: #161c27;
+        }
+        .hero-banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left center;
+        }
+        @media (max-width: 640px) {
+            .hero-banner {
+                height: 520px;
+                min-height: 520px;
+            }
         }
         .bento-item {
             transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -150,33 +167,8 @@
 </header>
 <main>
 <!-- Hero Section -->
-<section class="relative min-h-screen flex items-center pt-20" id="home">
-<div class="absolute inset-0 z-0 overflow-hidden">
-<div class="w-full h-full bg-cover bg-center" style='background-image: url("./isa-proto.png");'></div>
-<div class="absolute inset-0 hero-gradient"></div>
-</div>
-<div class="relative z-10 max-w-screen-xl mx-auto px-margin-desktop w-full">
-<div class="max-w-3xl">
-<span class="inline-block py-2 px-4 mb-8 bg-primary text-white rounded-md font-label-sm text-xs font-bold tracking-[0.2em] uppercase">
-                    Líder em Integração de Sistemas
-                </span>
-<h1 class="font-display-lg text-6xl text-white mb-8 leading-[1.1] tracking-tight">
-                    ENGENHARIA E AUTOMAÇÃO <br/><span class="text-primary-fixed-dim">DE ALTA PRECISÃO</span>
-</h1>
-<p class="font-body-md text-xl text-white/80 mb-12 max-w-xl leading-relaxed">
-                    A <span class="font-bold text-white">Isa Engenharia</span> desenvolve soluções inteligentes para elevar a produtividade industrial com tecnologia de ponta e expertise técnica comprovada.
-                </p>
-<div class="flex flex-wrap gap-6">
-<a class="bg-primary text-white px-10 py-5 rounded-lg font-bold flex items-center gap-3 hover:bg-on-primary-fixed-variant transition-all shadow-xl hover:translate-y-[-2px]" href="#services">
-                        Nossas Soluções
-                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
-</a>
-<a class="border-2 border-white/40 text-white px-10 py-5 rounded-lg font-bold backdrop-blur-md hover:bg-white hover:text-primary transition-all hover:border-white" href="#about">
-                        Conheça a Empresa
-                    </a>
-</div>
-</div>
-</div>
+<section class="relative hero-banner overflow-hidden" id="home" aria-label="Banner Isa Engenharia">
+<img alt="Isa Engenharia - Engenharia e automação de alta precisão" class="hero-banner-image" decoding="async" draggable="false" fetchpriority="high" height="1080" src="./hero-banner.png" width="1920"/>
 </section>
 <!-- A Empresa (About) -->
 <section class="py-32 bg-white" id="about">
@@ -619,7 +611,9 @@
         });
         document.querySelectorAll('img').forEach((image) => {
             image.setAttribute('draggable', 'false');
-            image.setAttribute('loading', image.loading || 'lazy');
+            if (!image.classList.contains('hero-banner-image')) {
+                image.setAttribute('loading', image.loading || 'lazy');
+            }
             image.setAttribute('decoding', 'async');
         });
     })();
