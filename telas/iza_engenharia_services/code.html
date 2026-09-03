@@ -1,0 +1,413 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Services | ISA Engenharia</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .service-card-hover:hover .icon-container {
+            background-color: #00448c;
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+    </style>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#00448c",
+                        "on-primary-fixed-variant": "#00458e",
+                        "on-tertiary-fixed-variant": "#41474e",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2a303d",
+                        "on-tertiary-fixed": "#161c22",
+                        "inverse-on-surface": "#ecf0ff",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e3e8f9",
+                        "inverse-primary": "#aac7ff",
+                        "on-tertiary-container": "#d1d7df",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d4daea",
+                        "surface-bright": "#f9f9ff",
+                        "outline-variant": "#c2c6d4",
+                        "on-surface-variant": "#424752",
+                        "on-surface": "#161c27",
+                        "surface-container": "#e8eeff",
+                        "secondary-fixed": "#d8e3fa",
+                        "surface-container-highest": "#dde2f3",
+                        "secondary-container": "#d5e0f7",
+                        "surface": "#f9f9ff",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#575e65",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#c1c7cf",
+                        "primary-fixed-dim": "#aac7ff",
+                        "primary-container": "#005bb7",
+                        "surface-tint": "#055cb9",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "on-primary-fixed": "#001b3e",
+                        "background": "#f9f9ff",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#586377",
+                        "on-primary-container": "#c4d7ff",
+                        "on-background": "#161c27",
+                        "secondary-fixed-dim": "#bcc7dd",
+                        "secondary": "#545f72",
+                        "tertiary-fixed": "#dde3eb",
+                        "outline": "#727783",
+                        "on-secondary-fixed": "#111c2c",
+                        "surface-variant": "#dde2f3",
+                        "primary-fixed": "#d7e3ff",
+                        "tertiary": "#40464d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant shadow-sm transition-all duration-200 ease-in-out">
+<nav class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max-width mx-auto">
+<div class="font-headline-lg text-headline-lg font-bold text-primary">ISA Engenharia</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-title-md text-title-md text-primary border-b-2 border-primary pb-1 transition-colors" href="#">Services</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Projects</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-title-md text-title-md font-semibold hover:opacity-90 transition-opacity">
+                Technical Spec
+            </button>
+</nav>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="relative pt-24 pb-16 px-margin-desktop max-w-container-max-width mx-auto overflow-hidden">
+<div class="absolute inset-0 bg-grid-pattern opacity-40 -z-10"></div>
+<div class="max-w-3xl">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-8 h-[2px] bg-primary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Core Capabilities</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6">Precision Integration for Industrial Excellence</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+                    Delivering advanced automation and electrical solutions tailored to the rigorous demands of modern industry. Our engineering precision ensures seamless integration and operational reliability.
+                </p>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-16 px-margin-desktop max-w-container-max-width mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Service 1: Industrial Automation -->
+<div class="service-card-hover group bg-white border border-outline-variant p-8 rounded-lg flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+<div>
+<div class="icon-container w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center text-primary mb-6 transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4 text-on-surface">Industrial Automation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            High-performance PLC programming, SCADA systems design, and HMI development to streamline production workflows and enhance real-time monitoring.
+                        </p>
+<ul class="space-y-3 mb-10">
+<li class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                PLC/DCS Architecture
+                            </li>
+<li class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                SCADA Implementation
+                            </li>
+</ul>
+</div>
+<button class="flex items-center gap-2 font-title-md text-title-md text-primary font-bold hover:gap-4 transition-all">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Service 2: Electrical Engineering -->
+<div class="service-card-hover group bg-white border border-outline-variant p-8 rounded-lg flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+<div>
+<div class="icon-container w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center text-primary mb-6 transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">electric_bolt</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4 text-on-surface">Electrical Engineering</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            Comprehensive power distribution design, panel assembly, and instrumentation engineering following strict NBR/IEC safety standards.
+                        </p>
+<ul class="space-y-3 mb-10">
+<li class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                Low/Medium Voltage Panels
+                            </li>
+<li class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                Arc Flash Studies
+                            </li>
+</ul>
+</div>
+<button class="flex items-center gap-2 font-title-md text-title-md text-primary font-bold hover:gap-4 transition-all">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Service 3: Field Services -->
+<div class="service-card-hover group bg-white border border-outline-variant p-8 rounded-lg flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+<div>
+<div class="icon-container w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center text-primary mb-6 transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">construction</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4 text-on-surface">Field Services</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            On-site maintenance, system commissioning, and electrical installations executed by highly qualified technical field teams.
+                        </p>
+<ul class="space-y-3 mb-10">
+<li class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                24/7 Technical Support
+                            </li>
+<li class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                Preventive Maintenance
+                            </li>
+</ul>
+</div>
+<button class="flex items-center gap-2 font-title-md text-title-md text-primary font-bold hover:gap-4 transition-all">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Service 4: Industry 4.0 -->
+<div class="service-card-hover group bg-white border border-outline-variant p-8 rounded-lg flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+<div>
+<div class="icon-container w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center text-primary mb-6 transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">memory</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4 text-on-surface">Industry 4.0</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            Digital transformation through IoT integration, Big Data analytics, and intelligent sensor networks for predictive manufacturing.
+                        </p>
+<ul class="space-y-3 mb-10">
+<li class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                IoT Gateway Solutions
+                            </li>
+<li class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                Cloud Connectivity
+                            </li>
+</ul>
+</div>
+<button class="flex items-center gap-2 font-title-md text-title-md text-primary font-bold hover:gap-4 transition-all">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Service 5: Technical Training -->
+<div class="service-card-hover group bg-white border border-outline-variant p-8 rounded-lg flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+<div>
+<div class="icon-container w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center text-primary mb-6 transition-all duration-300">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4 text-on-surface">Technical Training</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            Capacity building for operators and engineers on advanced automation tools, safety protocols, and new system architecture.
+                        </p>
+<ul class="space-y-3 mb-10">
+<li class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                Custom Workshops
+                            </li>
+<li class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                NR-10/NR-12 Certification
+                            </li>
+</ul>
+</div>
+<button class="flex items-center gap-2 font-title-md text-title-md text-primary font-bold hover:gap-4 transition-all">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Featured Project Link / CTA Card -->
+<div class="relative bg-primary overflow-hidden rounded-lg p-8 flex flex-col justify-center items-center text-center">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">settings_suggest</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4 text-on-primary">Need a Custom Integrated Solution?</h3>
+<p class="font-body-md text-body-md text-on-primary-container mb-8">
+                        Connect with our technical consultants for a detailed engineering analysis of your industrial plant needs.
+                    </p>
+<button class="bg-white text-primary px-8 py-3 rounded-lg font-bold hover:bg-surface-container transition-colors">
+                        Get Consultation
+                    </button>
+</div>
+</div>
+</section>
+<!-- Technical Status / Process Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="px-margin-desktop max-w-container-max-width mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-display-lg mb-4">The Engineering Process</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                        Our systematic approach ensures that every integration meets the highest industrial standards of efficiency and safety.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="px-4 py-1 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-full mb-2">01. ANALYSIS</div>
+<h4 class="font-title-md text-title-md">Diagnostic</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Detailed mapping of current industrial infrastructure and bottlenecks.</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="px-4 py-1 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-full mb-2">02. DESIGN</div>
+<h4 class="font-title-md text-title-md">Blueprint</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Custom engineering schematics and automation architecture design.</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="px-4 py-1 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-full mb-2">03. EXECUTION</div>
+<h4 class="font-title-md text-title-md">Implementation</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Precision assembly, coding, and on-site integration by certified staff.</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="px-4 py-1 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-full mb-2">04. QUALITY</div>
+<h4 class="font-title-md text-title-md">Validation</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Rigorous testing, commissioning, and final technical delivery.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section with Image -->
+<section class="py-24 px-margin-desktop max-w-container-max-width mx-auto">
+<div class="flex flex-col md:flex-row gap-gutter items-center bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="w-full md:w-1/2 h-80 md:h-[500px]">
+<div class="bg-cover bg-center w-full h-full" data-alt="A high-tech industrial automation control room with multiple glowing monitors displaying complex system schematics and real-time data visualizations. Professional engineers in technical attire are collaborating in a clean, minimalist environment illuminated by cool blue and white lighting. The scene conveys precision, sophisticated technology, and a focus on industrial engineering excellence." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcb0FOEiWc0VDd6Invb6EAeQ3Zldx9ETFLZ4t7TQ-xQMoHpS1zJRo4vo-i4Jhm6xXlJ3SqXqqCju5-jizeXWASVB1esq7ljvHbOnralsDY6_yzim2XEUWsjGWnMBtMCf0NcVDd8XiPKzbKrH_Rfw3aOfbJ8DGm0idCgG83r0wx3eKIwv8eT2CmXgAEj5Mhs4mHheLkze_YKFJopLAHXO-ZPxLEAJhWDebkthWMJmMau86Fqusg7ZNZZw')"></div>
+</div>
+<div class="w-full md:w-1/2 p-12">
+<h2 class="font-display-lg text-display-lg mb-6">Ready to Optimize Your Infrastructure?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                        Our technical team is ready to discuss your next project. From small upgrades to full plant automation, we bring precision to every connection.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold flex items-center gap-2 group">
+                            Contact Engineering <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">mail</span>
+</button>
+<button class="border border-primary text-primary px-8 py-3 rounded-lg font-bold flex items-center gap-2">
+                            Download Brochure <span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant w-full pt-16 pb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max-width mx-auto mb-16">
+<div class="col-span-1 md:col-span-1">
+<div class="font-title-md text-title-md font-bold text-on-surface mb-6">ISA Engenharia</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-90">
+                    Integrating intelligence into industrial infrastructure through precision engineering and modern automation.
+                </p>
+</div>
+<div>
+<h4 class="font-title-md text-title-md font-bold text-on-surface mb-6">Services</h4>
+<nav class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Automation</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Electrical</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Field Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Industry 4.0</a>
+</nav>
+</div>
+<div>
+<h4 class="font-title-md text-title-md font-bold text-on-surface mb-6">Resources</h4>
+<nav class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-primary underline" href="#">Technical Support</a>
+<a class="text-on-surface-variant hover:text-primary underline" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline" href="#">Partners</a>
+<a class="text-on-surface-variant hover:text-primary underline" href="#">Careers</a>
+</nav>
+</div>
+<div>
+<h4 class="font-title-md text-title-md font-bold text-on-surface mb-6">Connect</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">São Paulo, SP - Brasil</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80">hub</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80">share</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80">alternate_email</span>
+</div>
+</div>
+</div>
+<div class="px-margin-desktop max-w-container-max-width mx-auto border-t border-outline-variant pt-8 text-center md:text-left">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 ISA Engenharia. Precision in Automation Systems Integration.</p>
+</div>
+</footer>
+<script>
+        // Smooth scroll micro-interaction for cards
+        document.querySelectorAll('.service-card-hover').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential for lightweight hover state effects
+            });
+        });
+
+        // Simple Intersection Observer for scroll reveal
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card-hover').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-700');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

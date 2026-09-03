@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Isa Engenharia | Automação e Engenharia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#00458e",
+                      "surface-container-low": "#f1f3ff",
+                      "surface": "#f9f9ff",
+                      "on-tertiary-fixed-variant": "#41474e",
+                      "on-tertiary-container": "#d1d7df",
+                      "surface-container-highest": "#dde2f3",
+                      "tertiary-fixed-dim": "#c1c7cf",
+                      "tertiary-container": "#575e65",
+                      "on-primary-fixed": "#001b3e",
+                      "primary-fixed": "#d7e3ff",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#055cb9",
+                      "secondary-container": "#d5e0f7",
+                      "primary": "#00448c",
+                      "surface-variant": "#dde2f3",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#f9f9ff",
+                      "outline-variant": "#c2c6d4",
+                      "on-surface": "#161c27",
+                      "primary-fixed-dim": "#aac7ff",
+                      "on-primary": "#ffffff",
+                      "surface-container-high": "#e3e8f9",
+                      "secondary": "#545f72",
+                      "surface-dim": "#d4daea",
+                      "error": "#ba1a1a",
+                      "tertiary": "#40464d",
+                      "secondary-fixed": "#d8e3fa",
+                      "outline": "#727783",
+                      "on-surface-variant": "#424752",
+                      "tertiary-fixed": "#dde3eb",
+                      "on-secondary-container": "#586377",
+                      "inverse-primary": "#aac7ff",
+                      "secondary-fixed-dim": "#bcc7dd",
+                      "on-primary-container": "#c4d7ff",
+                      "on-error": "#ffffff",
+                      "on-background": "#161c27",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#3c475a",
+                      "background": "#f9f9ff",
+                      "primary-container": "#005bb7",
+                      "surface-container": "#e8eeff",
+                      "on-secondary-fixed": "#111c2c",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#161c22",
+                      "inverse-surface": "#2a303d",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#ecf0ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "margin-desktop": "64px",
+                      "container-max-width": "1280px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Hanken Grotesk"],
+                      "label-sm": ["Inter"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "title-md": ["Hanken Grotesk"],
+                      "body-md": ["Inter"],
+                      "headline-lg-mobile": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .transition-header {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(22, 28, 39, 0.95) 20%, rgba(22, 28, 39, 0.6) 100%);
+        }
+        .bento-item {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .bento-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px -10px rgba(0, 68, 140, 0.2);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #00448c;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            flex: 0 0 100%;
+        }
+        @media (min-width: 768px) {
+            .carousel-item { flex: 0 0 33.333%; }
+        }
+        @media (min-width: 1024px) {
+            .carousel-item { flex: 0 0 25%; }
+        }
+        .logo-filter {
+            filter: brightness(0) invert(1);
+            transition: all 0.5s ease;
+        }
+        .logo-filter:hover {
+            filter: none;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 transition-header bg-transparent border-b border-transparent" id="main-header">
+<div class="max-w-screen-xl mx-auto px-margin-desktop py-4 h-24 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<img alt="Isa Engenharia" class="h-14 w-auto object-contain brightness-0 invert" id="header-logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANfeLX19cgX6Zexzvr6ncnFp0ltLRSy3Ffey283GAUsM47bCW4A2Ojr1r5wENbLx0GsQHD56obGsAVNM-ExrCIigcjPUXEur1ShqnWGrBaBOGa610rNoNrd5vSUdiJyNrRPmBBucLO8-LkN3hQizpIg_88yjvOtQyH87cZGYysVRXeDhQU_oY1P6PKYvWbtUUHBKDRVlBT1OGIHnQIxH0TdlLyidLieoZpqDWcreOp7oTh3P_Z-Valj969chRFYRHo4_Pkq-bHOS6a"/>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="nav-link text-white hover:text-primary-fixed-dim transition-colors text-sm font-semibold tracking-wide uppercase" href="#home">Início</a>
+<a class="nav-link text-white/80 hover:text-primary-fixed-dim transition-colors text-sm font-semibold tracking-wide uppercase" href="#about">Empresa</a>
+<a class="nav-link text-white/80 hover:text-primary-fixed-dim transition-colors text-sm font-semibold tracking-wide uppercase" href="#services">Serviços</a>
+<a class="nav-link text-white/80 hover:text-primary-fixed-dim transition-colors text-sm font-semibold tracking-wide uppercase" href="#contact">Contato</a>
+<button class="bg-primary text-white font-bold px-7 py-3 rounded-lg active:scale-95 transition-all shadow-lg hover:shadow-primary/20">
+                Orçamento
+            </button>
+</nav>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20" id="home">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDT5HV0hFGsF1pEYON-sn0M_aoPrpcfxX1j5edMduLQ3l8OOw8LefZwRGq44Q7gOvCK-RTK-4zZgnT9vM2XbfIZylMuP4QUTRwMfWGL9gl9YeU8L34YDENSQnqAiGNHfFm_jHhI2kEGBDbrO2AbkCSYTFg6WM9yZ0fqCppNAm18fJx3EEInbksgsC9Y1tskoTgmKRfQ7amMsQ_gFl8uCbmPgipQ1Q2V9GUgMpQog29AtJhccyXn-1hHi3q0iZOMba5h334Yqk4tSy25dG8");'></div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-screen-xl mx-auto px-margin-desktop w-full">
+<div class="max-w-3xl">
+<span class="inline-block py-2 px-4 mb-8 bg-primary text-white rounded-md font-label-sm text-xs font-bold tracking-[0.2em] uppercase">
+                    Líder em Integração de Sistemas
+                </span>
+<h1 class="font-display-lg text-6xl text-white mb-8 leading-[1.1] tracking-tight">
+                    ENGENHARIA E AUTOMAÇÃO <br/><span class="text-primary-fixed-dim">DE ALTA PRECISÃO</span>
+</h1>
+<p class="font-body-md text-xl text-white/80 mb-12 max-w-xl leading-relaxed">
+                    A <span class="font-bold text-white">Isa Engenharia</span> desenvolve soluções inteligentes para elevar a produtividade industrial com tecnologia de ponta e expertise técnica comprovada.
+                </p>
+<div class="flex flex-wrap gap-6">
+<a class="bg-primary text-white px-10 py-5 rounded-lg font-bold flex items-center gap-3 hover:bg-on-primary-fixed-variant transition-all shadow-xl hover:translate-y-[-2px]" href="#services">
+                        Nossas Soluções
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="border-2 border-white/40 text-white px-10 py-5 rounded-lg font-bold backdrop-blur-md hover:bg-white hover:text-primary transition-all hover:border-white" href="#about">
+                        Conheça a Empresa
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- A Empresa (About) -->
+<section class="py-32 bg-white" id="about">
+<div class="max-w-screen-xl mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative order-1 lg:order-1">
+<div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative z-10 bg-surface-container-low flex flex-col items-center justify-center">
+<img alt="Nossa Equipe Técnica" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARIV9TGMX-9H5F9DSwKb766r0ClR_gmd9H5t34pbudGKgQOGlJOWU_MbLm7FOqQp6Z1glnN0O2GPHIzJA0R6ZxbE_AnwizfrfzO9ksjcHHCeeFetxR6zBL4WPE_Utqo8RK3_y_nevFOCk9k3xiSS9OWDHFJPh2MPEdOOvGlcMkUn1EjGTrMq--ARBLZx1WymD76m8Yuhj_xXC_zdBAx8FxDH3fZ3VHdgRxlztnoip4AJ_qm5aHEYiMpA73IfljT2ix8cnrfwZRMvTZ"/>
+<div class="absolute inset-0 bg-primary/5"></div>
+</div>
+<div class="absolute -bottom-12 -right-12 bg-primary p-12 rounded-3xl shadow-2xl z-20 hidden md:block">
+<div class="text-white text-center">
+<span class="block text-5xl font-bold mb-2">15+</span>
+<span class="text-sm font-label-sm uppercase tracking-widest font-bold opacity-90">Anos de Excelência</span>
+</div>
+</div>
+<!-- Aesthetic element -->
+<div class="absolute -top-12 -left-12 w-48 h-48 border-8 border-surface-container-highest rounded-3xl -z-0"></div>
+</div>
+<div class="space-y-8 order-2 lg:order-2">
+<div class="inline-flex items-center gap-4 text-primary">
+<div class="w-16 h-1 bg-primary"></div>
+<span class="font-label-sm text-sm font-bold uppercase tracking-[0.2em]">Quem Somos</span>
+</div>
+<h2 class="font-headline-lg text-5xl text-on-surface leading-tight">Compromisso com o Sucesso do Cliente</h2>
+<div class="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+<p class="">
+                            A <span class="font-bold text-primary">Isa Engenharia</span> nasceu da missão de desenvolver projetos e sistemas em parceria com nossos clientes, superando expectativas em qualidade e confiabilidade técnica.
+                        </p>
+<p class="">
+                            Nossos especialistas atuam em um ambiente ético e desafiador, garantindo a criação de valor e a sustentabilidade do negócio através da integração otimizada entre hardware e software.
+                        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
+<div class="flex items-start gap-4 p-6 bg-surface-container-low rounded-2xl">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="verified">verified</span>
+<div>
+<h4 class="font-bold text-on-surface text-lg">Qualidade Técnica</h4>
+<p class="text-sm text-on-surface-variant mt-1">Capacidade reconhecida e normas internacionais.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-6 bg-surface-container-low rounded-2xl">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="groups">groups</span>
+<div>
+<h4 class="font-bold text-on-surface text-lg">Equipe Especializada</h4>
+<p class="text-sm text-on-surface-variant mt-1">Treinamentos constantes nos principais fabricantes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Áreas de Atuação -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-screen-xl mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<span class="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Experiência Setorial</span>
+<h2 class="font-headline-lg text-5xl">Setores Atendidos</h2>
+</div>
+<p class="text-on-surface-variant text-lg max-w-sm">Nossa expertise atravessa diversos segmentos críticos, adaptando tecnologias de ponta para cada necessidade.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="group relative overflow-hidden rounded-2xl aspect-[3/4] bento-item shadow-xl">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3ojW5h5XtEEPnTnul8vO_B6Dp5KSNHTibBBeg8rkHiz1WyMsNLy7veIpV15yw7h5JchyJZhhVhg1PJ8ZFOucg_THRl9tEio0LGgVZeM969CIhStG1_tYJ0_PxieGQQxXk0pUliKWYYsJfaS4VqrbUUtG1SEsCVn3YhYgCIKq-InhbTI7XiqsI1zZqtG1MOrp_M7mixeaOOMoOxAzXEzqKsMUVBcZe_I19yHcuRozpKXYD4G1cECEuJ1KUhwsltgii5e7lIOuh6x19"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/20 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform">
+<h3 class="text-white font-title-md text-2xl mb-3">Alimentícia</h3>
+<p class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Controle de temperatura e envase automatizado com precisão cirúrgica.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl aspect-[3/4] bento-item shadow-xl">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC75JylWkdxb2Yo-MGyAiHzcQDJUHShkkLn9-kY4oL3_XYDAnhkZJWrmUYgw_4NOKeUjuNorFmK-OIXKhGmjubBE5byEsdgI1x2ZbWUc-69acQA8KjOiQROV2ZSRbalA_kB5E1LVaLdmT4ABff8IzlKXUnVWjbp61b7uQF7aEME81M42kLX2lMusIG_ezr-CUYZD2LGYMSOrzL-SFC1U5bgKSASsYEc0JOLxYIV7wiYDoB4fsFLaIcAJG3u1zC0tIqDcKyaIDFgyRkn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/20 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform">
+<h3 class="text-white font-title-md text-2xl mb-3">Saneamento</h3>
+<p class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Monitoramento remoto e telemetria avançada de reservatórios.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl aspect-[3/4] bento-item shadow-xl">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfKRdlwONnBUyT29fVMfrIq7bB7lOHV0yvtCwb_W_CotnuTStTcrgiOY-wPqomfY2apU5wTgY5ssSzIzIv6orLiPw6Ew2pFGJ4C89n7B6GDEZwoSfs8onvRhmC__Q6zY1ttd2pdlztDrAEvDiZYQWjCkZrv_ZSICGll-ymRccqh_zZYKtTzV-OVEiZJReBYRoQL3HXrc00fQQijAmOMsr-o5IobQ27aolwHt_vAIEBwdWQ7ftFWejZ_LYqyvW05hOrakr1gh0Sd_m4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/20 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform">
+<h3 class="text-white font-title-md text-2xl mb-3">Automobilístico</h3>
+<p class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Robótica avançada e linhas de montagem inteligentes.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl aspect-[3/4] bento-item shadow-xl">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfyfHgYu_RCNRTaoootuSqhpKpLGYoWQjbwhH44cjwdk8whd3-OpQdwh0QVA8cl6AGkLC5cVd8W5ZC9VfOmlieFtHzwt-C-cuSta-Jv5MrwvQEU8o9AwAKgpm_I9UxaHJZ0SPLLWawVa9w4mJSRcH9qV1OwHJt6F_ksoD5eUyQa8-Xk9N6g2Cx0o64Y4YDaQqIel4hkbXoQ5DkuZUx6bewyoPwrsWR5akGdZmBFBGCvniAxMyshwyf0Qr27sn_obVg3_z9Kmk8YVvm"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/20 to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform">
+<h3 class="text-white font-title-md text-2xl mb-3">Energia</h3>
+<p class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Integração de painéis MT/BT e sistemas de redes inteligentes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Especializações (Services) -->
+<section class="py-32 bg-white" id="services">
+<div class="max-w-screen-xl mx-auto px-margin-desktop">
+<div class="text-center max-w-3xl mx-auto mb-20">
+<span class="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block">Especialidades</span>
+<h2 class="font-headline-lg text-5xl mb-6">Soluções de Engenharia</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">Nossos serviços cobrem todo o ciclo de vida do seu projeto industrial, da especificação ao comissionamento final.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Service 1 -->
+<div class="bg-surface-container-low p-12 rounded-3xl service-card group">
+<div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-10 shadow-sm group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:text-white" data-icon="settings_input_component">settings_input_component</span>
+</div>
+<h3 class="font-title-md text-2xl mb-6">Automação</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Sistemas PLC, IHM e SCADA desenvolvidos com os softwares líderes mundiais para controle total da sua planta.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="w-2 h-2 bg-primary rounded-full"></span> Programação avançada de CLP
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="w-2 h-2 bg-primary rounded-full"></span> Desenvolvimento de SCADA/DCS
+                        </li>
+</ul>
+<a class="text-primary font-bold inline-flex items-center gap-2 group/btn" href="#">
+                        Saiba Mais <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<!-- Service 2 -->
+<div class="bg-surface-container-low p-12 rounded-3xl service-card group">
+<div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-10 shadow-sm group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:text-white" data-icon="bolt">bolt</span>
+</div>
+<h3 class="font-title-md text-2xl mb-6">Engenharia Elétrica</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Projetos elétricos completos e montagem de painéis certificados seguindo rigorosamente as normas SPDA/NR10.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="w-2 h-2 bg-primary rounded-full"></span> Montagem de Painéis de MT/BT
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="w-2 h-2 bg-primary rounded-full"></span> Laudos e Estudos Técnicos
+                        </li>
+</ul>
+<a class="text-primary font-bold inline-flex items-center gap-2 group/btn" href="#">
+                        Saiba Mais <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<!-- Service 3 -->
+<div class="bg-surface-container-low p-12 rounded-3xl service-card group">
+<div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-10 shadow-sm group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:text-white" data-icon="engineering">engineering</span>
+</div>
+<h3 class="font-title-md text-2xl mb-6">Serviços de Campo</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Nossa equipe de Field Services garante o uptime máximo com manutenção preditiva, startup e treinamento de pessoal.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="w-2 h-2 bg-primary rounded-full"></span> Startup e Comissionamento
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="w-2 h-2 bg-primary rounded-full"></span> Calibração e Instrumentação
+                        </li>
+</ul>
+<a class="text-primary font-bold inline-flex items-center gap-2 group/btn" href="#">
+                        Saiba Mais <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Parceiros -->
+<section class="py-24 bg-primary border-y border-white/10" id="partners">
+<div class="max-w-screen-xl mx-auto px-margin-desktop">
+<p class="text-center text-sm font-bold text-white uppercase tracking-[0.3em] mb-16">Parceiros Tecnológicos de Classe Mundial</p>
+<div class="carousel-container">
+<div class="carousel-track" id="partners-track">
+<!-- Items will be duplicated for infinite scroll logic or simple pagination -->
+<div class="carousel-item px-6 flex justify-center items-center">
+<img alt="Siemens" class="h-20 w-auto object-contain logo-filter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACxhgPktqWXPsHiyyVJ5mY7ggtkmOgjrMROW4JLAR-P4WISwXKg6EXxFf0B45gWR6AGog7Wgbi3qCkkAtyhcmDmcE2Y7DVBle16MKwhxe6_1gGOt9eLD0eNBPcnVm0cxO2HFuXO2j0eYnnwi0CC0bC8pUt8hpXDZpJ_Wa9RlMR3McN9OEfH1vnR8bcS8N2juSe8EGnW3kvD7IEkrxoes9y8j1o9LqHXni8Nad2FlEJACK7LuDfMAtuhBoGS5uzkiXE0RsoLbINPClr"/>
+</div>
+<div class="carousel-item px-6 flex justify-center items-center">
+<img alt="Rockwell Automation" class="h-20 w-auto object-contain logo-filter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiSEzAKYDV3kFrNzptGmx54aL73wQzXM8NX4-Ry0iY3a90MyDEQHCb06d-A0vctVRYgC16xGj7NLi56lQK6pCtT0yxJ9ptwehWg7i9obn0soR8XMukglZt2iYrN3jU8ALwLLtYLg4LXVw-vy2gf1BJEgidZV0QlmdqTh-ex1Bz_mhJV0W8Arrg3RcbnAuC6C6Zt-IKB2GeWXGzicwGwSHiJ4FMhj6IGSbGe1SXrkHQPSZBbFFfvvKGGeyyn2V8JhRiDQPkGrrn5VeC"/>
+</div>
+<div class="carousel-item px-6 flex justify-center items-center">
+<img alt="Schneider Electric" class="h-20 w-auto object-contain logo-filter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8xHW12NYCOl3l9I-c3f69U2SJAwhX-GLxOEETGrGiVv1sUVODqDXRmJKVHlFSYXX5WhCcbZ2FsnDnukTtNre2TzM_FBECQcdepJp6-EmvMfOZcp5hIAnNW5_EAlB-dPqEcb56kMftzheFwsK11F8R16SDORXeNOFIAo_xzGa7RFp9WtDiVktz8IEG7zw_vh7kG-3dUZcmzyM27fDXU7a-WWA7J0jhJhtKwzzL_bhkIxEk6Jx0qdMM4JV5ZGzfhrlOw2ADxnrk6uzF"/>
+</div>
+<div class="carousel-item px-6 flex justify-center items-center">
+<img alt="WEG" class="h-20 w-auto object-contain logo-filter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmnJURlN11fpFbvg9KXCQMFY82CVn2wrVvNz2Le_sjeKhx_SutudjM6BjP2VQUwfRoxUNnhwvuv8GAbVHkEVcwFBG5Pm5TtI89y4UKho_iO2NuWlrwBd-k6N6f68giiXhxcmASHT44CpOODLLsY8Y8cBl8ZWLQd1AA6wqMgaIJpsBhjwZg3CAKQqSrdhMgtOILub4rm3FUhKszMz4B6VV7iTWCSP5Omx66U93qP3ENdw1mQBrMzYJGmRmEiWpB6goM90NQlkRZGduY"/>
+</div>
+<div class="carousel-item px-6 flex justify-center items-center">
+<img alt="ABB" class="h-20 w-auto object-contain logo-filter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnldDL2tOMrvjBy88wLz5rPaPRpVzZqYlr1FcshzGJ1k-Rr-X67x3WvXWcwbpZ5t3USBh6mM2T4eD3BpkwibAphZwsju-e35608Mn0nn4BOGAhkSSRB6KFzSamnGmWp-sIallynhqhfvw79S4gsPiekBpR8dNtL_K58T86_6bO17HBtdxvnz2nQY0xZ9iqD2SxILLKm83lL8aRoYcQQ2nOOpgYuS6WjvInFxbzr6Jg1U9dH7fB4yWaOyBX-9RJqMByfwSyTTXgxulZ"/>
+</div>
+</div>
+</div>
+<div class="flex justify-center gap-6 mt-12">
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all active:scale-90" id="prev-btn">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all active:scale-90" id="next-btn">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Contato -->
+<section class="py-32" id="contact">
+<div class="max-w-screen-xl mx-auto px-margin-desktop">
+<div class="bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border border-outline-variant/30 flex flex-col lg:row-reverse lg:flex-row-reverse">
+<div class="bg-on-surface text-white p-16 lg:w-2/5 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-lg text-5xl mb-12 leading-tight">Vamos projetar o seu próximo desafio.</h3>
+<div class="space-y-10">
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary-fixed-dim text-3xl" data-icon="location_on">location_on</span>
+<div>
+<p class="font-bold text-xl mb-1">Escritório Central</p>
+<p class="text-surface-variant/80">Av. Industrial, 1500 - Distrito Industrial<br/>São Paulo, SP - Brasil</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary-fixed-dim text-3xl" data-icon="call">call</span>
+<div>
+<p class="font-bold text-xl mb-1">Telefone</p>
+<p class="text-surface-variant/80">+55 (11) 4002-8922</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-primary-fixed-dim text-3xl" data-icon="mail">mail</span>
+<div>
+<p class="font-bold text-xl mb-1">E-mail</p>
+<p class="text-surface-variant/80">comercial@isaengenharia.com.br</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-10 border-t border-white/10">
+<p class="text-sm opacity-60">Atendimento comercial de Segunda a Sexta, das 08:00 às 18:00.</p>
+</div>
+</div>
+<div class="p-16 lg:w-3/5">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-3">
+<label class="text-sm font-bold text-on-surface tracking-wide uppercase">Nome Completo</label>
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant rounded-none p-4 focus:ring-0 focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/40" placeholder="Digite seu nome" type="text"/>
+</div>
+<div class="space-y-3">
+<label class="text-sm font-bold text-on-surface tracking-wide uppercase">E-mail Corporativo</label>
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant rounded-none p-4 focus:ring-0 focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/40" placeholder="seuemail@empresa.com" type="email"/>
+</div>
+<div class="space-y-3 md:col-span-2">
+<label class="text-sm font-bold text-on-surface tracking-wide uppercase">Assunto de Interesse</label>
+<select class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant rounded-none p-4 focus:ring-0 focus:border-primary outline-none transition-all cursor-pointer">
+<option>Integração de Sistemas</option>
+<option>Projetos de Engenharia Elétrica</option>
+<option>Serviços de Campo / Startup</option>
+<option>Treinamento Especializado</option>
+</select>
+</div>
+<div class="space-y-3 md:col-span-2">
+<label class="text-sm font-bold text-on-surface tracking-wide uppercase">Sua Mensagem</label>
+<textarea class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant rounded-none p-4 focus:ring-0 focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/40" placeholder="Como podemos ajudar sua indústria hoje?" rows="5"></textarea>
+</div>
+<div class="md:col-span-2 pt-4">
+<button class="bg-primary text-white font-black text-sm tracking-[0.2em] uppercase px-12 py-5 rounded-lg hover:bg-on-primary-fixed-variant transition-all active:scale-95 shadow-xl" type="submit">
+                                Enviar Solicitação
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-on-surface text-surface-variant py-24 border-t border-white/5">
+<div class="max-w-screen-xl mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-16">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 mb-8">
+<img alt="Isa Engenharia" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5_y3XMxtPFA6M2vRFiExSFa6YVrtcc_sTJiTVCBgDdrTfa6MQX9_TYIcgRHmpqV8rBmvALOVLv05ZsVFWFZAtI248GCKh8S34drJ38iCwe2WGRgpO6s2oinNgzAhxQ8MVYj2u8MaMO8xM3KWoZ2D8EBcwQ_AVqLv804xspT2OpUycTBhn3aE7Wus5HDbiiEXAvumCsiz9l06QqdwI9LZbRrHmFD5ljBwm1Arks0eMPL6Tluif7-Van-PBHyMZA-Ne_My8B17Zxomo"/>
+</div>
+<p class="text-base leading-relaxed opacity-60 max-w-xs">
+                Engineered for Precision. Liderando a inovação industrial através de excelência técnica e conhecimento superior em automação.
+            </p>
+</div>
+<div>
+<h4 class="text-white font-bold text-lg mb-8 tracking-wide">Links Rápidos</h4>
+<ul class="space-y-5 text-base">
+<li class=""><a class="hover:text-primary-fixed-dim transition-colors" href="#home">Início</a></li>
+<li class=""><a class="hover:text-primary-fixed-dim transition-colors" href="#about">A Empresa</a></li>
+<li class=""><a class="hover:text-primary-fixed-dim transition-colors" href="#services">Nossas Especialidades</a></li>
+<li class=""><a class="hover:text-primary-fixed-dim transition-colors" href="#contact">Solicitar Orçamento</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold text-lg mb-8 tracking-wide">Institucional</h4>
+<ul class="space-y-5 text-base">
+<li class=""><a class="hover:text-primary-fixed-dim transition-colors" href="#">Sustentabilidade</a></li>
+<li class=""><a class="hover:text-primary-fixed-dim transition-colors" href="#">Política de Qualidade</a></li>
+<li class=""><a class="hover:text-primary-fixed-dim transition-colors" href="#">Código de Ética</a></li>
+<li class=""><a class="hover:text-primary-fixed-dim transition-colors" href="#">Compliance</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold text-lg mb-8 tracking-wide">Presença Digital</h4>
+<div class="flex gap-4">
+<a class="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all group" href="#">
+<svg class="w-6 h-6 fill-white group-hover:scale-110 transition-transform" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+</a>
+<a class="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all group" href="#">
+<svg class="w-6 h-6 fill-white group-hover:scale-110 transition-transform" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.412.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.013 3.584-.07 4.85c-.054 1.17-.249 1.805-.413 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.36-2.227.413-1.266.057-1.646.07-4.85.07s-3.584-.013-4.85-.07c-1.17-.054-1.805-.249-2.227-.413a3.481 3.481 0 01-1.382-.896 3.477 3.477 0 01-.896-1.381c-.164-.422-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.17.249-1.805.412-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.36 2.227-.413 1.266-.057 1.646-.07 4.85-.07zM12 0C8.741 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126s1.384 1.078 2.126 1.384c.766.296 1.636.499 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384s1.078-1.384 1.384-2.126c.296-.765.499-1.636.558-2.913.058-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126s-1.384-1.078-2.126-1.384c-.765-.296-1.636-.499-2.913-.558C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"></path></svg>
+</a>
+</div>
+<p class="mt-8 text-sm opacity-40">Siga-nos para atualizações sobre o setor.</p>
+</div>
+</div>
+<div class="max-w-screen-xl mx-auto px-margin-desktop mt-24 pt-10 border-t border-white/5 flex flex-col md:row-reverse md:flex-row justify-between items-center gap-6 text-sm opacity-40 font-medium">
+<p class="">© 2024 Isa Engenharia. Todos os direitos reservados. Engineered for Precision.</p>
+<div class="flex gap-8">
+<a class="hover:text-white" href="#">Privacidade</a>
+<a class="hover:text-white" href="#">Termos de Uso</a>
+</div>
+</div>
+</footer>
+<script>
+    const header = document.getElementById('main-header');
+    const logo = document.getElementById('header-logo');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-xl', 'h-20');
+            header.classList.remove('bg-transparent', 'border-transparent', 'h-24');
+            logo.classList.remove('brightness-0', 'invert');
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-white', 'text-white/80');
+                link.classList.add('text-on-surface-variant');
+            });
+        } else {
+            header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-xl', 'h-20');
+            header.classList.add('bg-transparent', 'border-transparent', 'h-24');
+            logo.classList.add('brightness-0', 'invert');
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-on-surface-variant');
+                link.classList.add('text-white/80');
+            });
+            const homeLink = document.querySelector('.nav-link[href="#home"]');
+            if (homeLink) homeLink.classList.add('text-white');
+        }
+        
+        let current = "";
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (window.pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach((link) => {
+            const href = link.getAttribute("href");
+            if (href && href.includes(current)) {
+                link.classList.add("text-primary");
+                if (window.scrollY < 100) link.classList.add("text-primary-fixed-dim");
+            } else {
+                link.classList.remove("text-primary", "text-primary-fixed-dim");
+            }
+        });
+    });
+
+    // Partners Carousel Logic
+    const track = document.getElementById('partners-track');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    let index = 0;
+
+    function updateCarousel() {
+        const itemWidth = track.querySelector('.carousel-item').clientWidth;
+        track.style.transform = `translateX(-${index * itemWidth}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        const items = track.querySelectorAll('.carousel-item').length;
+        const visibleItems = window.innerWidth >= 1024 ? 4 : (window.innerWidth >= 768 ? 3 : 1);
+        if (index < items - visibleItems) {
+            index++;
+        } else {
+            index = 0;
+        }
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        const items = track.querySelectorAll('.carousel-item').length;
+        const visibleItems = window.innerWidth >= 1024 ? 4 : (window.innerWidth >= 768 ? 3 : 1);
+        if (index > 0) {
+            index--;
+        } else {
+            index = items - visibleItems;
+        }
+        updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+</script>
+</body></html>

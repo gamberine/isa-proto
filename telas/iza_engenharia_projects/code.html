@@ -1,0 +1,332 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Projects | ISA Engenharia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#575e65",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "surface-container-high": "#e3e8f9",
+                        "on-secondary-fixed": "#111c2c",
+                        "on-background": "#161c27",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#ecf0ff",
+                        "outline": "#727783",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d4daea",
+                        "on-primary-fixed": "#001b3e",
+                        "secondary-fixed-dim": "#bcc7dd",
+                        "on-surface-variant": "#424752",
+                        "surface": "#f9f9ff",
+                        "tertiary": "#40464d",
+                        "primary-fixed": "#d7e3ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#41474e",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f9f9ff",
+                        "surface-tint": "#055cb9",
+                        "outline-variant": "#c2c6d4",
+                        "surface-container-low": "#f1f3ff",
+                        "on-primary-container": "#c4d7ff",
+                        "surface-container": "#e8eeff",
+                        "primary": "#00448c",
+                        "surface-variant": "#dde2f3",
+                        "secondary-container": "#d5e0f7",
+                        "on-tertiary-fixed": "#161c22",
+                        "on-tertiary-container": "#d1d7df",
+                        "surface-container-highest": "#dde2f3",
+                        "tertiary-fixed": "#dde3eb",
+                        "secondary": "#545f72",
+                        "tertiary-fixed-dim": "#c1c7cf",
+                        "primary-fixed-dim": "#aac7ff",
+                        "error": "#ba1a1a",
+                        "primary-container": "#005bb7",
+                        "background": "#f9f9ff",
+                        "on-secondary-container": "#586377",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#161c27",
+                        "inverse-surface": "#2a303d",
+                        "secondary-fixed": "#d8e3fa",
+                        "inverse-primary": "#aac7ff",
+                        "on-primary-fixed-variant": "#00458e",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "container-max-width": "1280px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .filter-btn.active {
+            background-color: #00448c;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-on-secondary-fixed-variant shadow-sm dark:shadow-none transition-all duration-300">
+<div class="max-w-container-max-width mx-auto flex justify-between items-center px-margin-desktop h-20">
+<a class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed" href="#">ISA Engenharia</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-title-md text-title-md text-secondary dark:text-secondary-fixed font-medium hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors duration-200" href="#">Home</a>
+<a class="font-title-md text-title-md text-secondary dark:text-secondary-fixed font-medium hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors duration-200" href="#">About</a>
+<a class="font-title-md text-title-md text-secondary dark:text-secondary-fixed font-medium hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors duration-200" href="#">Services</a>
+<a class="font-title-md text-title-md text-primary dark:text-primary-fixed border-b-2 border-primary font-bold pb-1" href="#">Projects</a>
+<a class="font-title-md text-title-md text-secondary dark:text-secondary-fixed font-medium hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors duration-200" href="#">Contact</a>
+<button class="bg-primary-container text-on-primary hover:bg-primary transition-all active:scale-95 px-6 py-2 rounded-lg font-title-md">Request Quote</button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="max-w-container-max-width mx-auto px-margin-desktop mb-16">
+<div class="max-w-3xl">
+<h1 class="font-display-lg text-display-lg mb-4 text-primary">Engineering Portfolio</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Explore our track record of precision and technical innovation. From automotive assembly lines to energy distribution systems, we deliver integrated engineering solutions that power modern industry.
+                </p>
+</div>
+</section>
+<!-- Category Filters -->
+<section class="max-w-container-max-width mx-auto px-margin-desktop mb-12">
+<div class="flex flex-wrap gap-4 items-center">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Filter by Industry:</span>
+<div class="flex flex-wrap gap-2">
+<button class="filter-btn active px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary-container hover:text-on-primary transition-all font-title-md text-title-md">All Projects</button>
+<button class="filter-btn px-6 py-2 rounded-full border border-outline-variant text-secondary hover:border-primary transition-all font-title-md text-title-md">Automotive</button>
+<button class="filter-btn px-6 py-2 rounded-full border border-outline-variant text-secondary hover:border-primary transition-all font-title-md text-title-md">Food &amp; Beverage</button>
+<button class="filter-btn px-6 py-2 rounded-full border border-outline-variant text-secondary hover:border-primary transition-all font-title-md text-title-md">Energy</button>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="max-w-container-max-width mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Main Featured Project (Uses Placeholder) -->
+<div class="lg:col-span-2 group relative bg-white border border-outline-variant rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLvUR3GAiE3z-12e-obk80tZE5y1pRae5u1kEi3jg-fjH95z8Drt23GxzKH8mDILkSCWFBXGx7uoBudTlXFPLyDs-XHAEslc4sHwk08qJUUClz1R4z2gRzIqOdnt7Ahfrp543pKbOu7B3xJz6IeGWCeh1EtA6trMgUaNiwpITVwfoJmPg2MXLPvAJHY0Az2SpJhlZV2ZiekbS4MgeGFHT6iKMw7MhoqXkJg7QJeyvVzapVtl6YQWRwuGmJ-J">
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-sm font-label-sm text-label-sm uppercase tracking-wider">Automotive Integration</span>
+<h3 class="font-display-lg text-headline-lg mt-2 text-on-background">Main Plant Control System</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl">precision_manufacturing</span>
+</div>
+<div class="flex gap-4 mb-6 text-on-surface-variant font-body-md text-body-md border-b border-outline-variant pb-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">person</span>
+<span>Client: General Motors Group</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span>2023</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md mb-6 leading-relaxed">
+                            Full modernization of the primary control panel using ISA standard blue-rack architecture. Implementation of advanced electronic measurement equipment to ensure sub-millisecond synchronization across the assembly line.
+                        </p>
+<a class="inline-flex items-center gap-2 text-primary font-title-md hover:gap-4 transition-all" href="#">
+                            View Case Study <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group bg-white border border-outline-variant rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
+<div class="aspect-square relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A clean, industrial bottling plant for the food and beverage industry. Polished stainless steel conveyor belts transport glass bottles under precision-timed filling nozzles. The lighting is bright and sterile, emphasizing high-tech cleanliness. The visual style is modern and professional with a focus on metallic textures and blue accent lighting characteristic of ISA Engineering." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMDlR2hgSkV2DdCWONKP_eSxfQOHiLZPeqsY9CFkJ3H0nB3FUzAG2i9IHptQYEhDkksnx2vU1NM7uqWq6EqJekQN1eNr9dvR4hfHUzuEwdZ9nGTx58amb6KGxO5jJfoZSA-TKeVqaHy3-NOoOp_JFdhhbvzDQQpagvaSaAsiJMXMrUcG6lT_-hxtex6Skg3MkL4A66VZl1sZdHsNCxyBglnjo_JjnNdpV5KEP25me-mc9ooUEKllmgaw')"></div>
+</div>
+<div class="p-6 flex-grow">
+<span class="bg-surface-container-high text-on-secondary-container px-2 py-1 rounded-sm font-label-sm text-label-sm uppercase tracking-wider">Food &amp; Beverage</span>
+<h3 class="font-title-md text-title-md mt-3 mb-2 text-on-background">Automated Bottling Line</h3>
+<p class="text-on-surface-variant font-body-md text-sm mb-4 line-clamp-3">
+                            Developed a high-speed liquid filling system with integrated quality control sensors for a major regional beverage manufacturer.
+                        </p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant">
+<span class="text-label-sm font-label-sm text-outline">Client: Ambev</span>
+<span class="material-symbols-outlined text-primary">liquor</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group bg-white border border-outline-variant rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
+<div class="aspect-square relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A massive industrial electrical transformer station at sunset. Complex arrangements of insulators, steel beams, and high-voltage cables create a geometric, technical pattern against a warm orange and purple sky. The mood is powerful and essential. The photography is sharp, highlighting the engineering detail of the power distribution equipment in a corporate engineering style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwelDqTBktYZMbSdSILpJtqGxtlogOOXZMUd_MWr45BxV_uqv2agbS-OhQ-NPMOPlzdYaEgEnQXeVIjHT6Urp-i4E6JT6vN5aM6FEdRgSFE3e9Gs7xzvVwMI0H31VNV8M49PfVxVWPvDbNNxyb3wu6lNfWFB8Qyc40ZmW4r4FpVsiUMfw2fXuk1GzuAO-yzMO7Bebp7v6udnrM5xeYbxYkLPYjEQGg1nA-K6rJR9j8X971rpQR8nPOrg')"></div>
+</div>
+<div class="p-6 flex-grow">
+<span class="bg-surface-container-high text-on-secondary-container px-2 py-1 rounded-sm font-label-sm text-label-sm uppercase tracking-wider">Energy</span>
+<h3 class="font-title-md text-title-md mt-3 mb-2 text-on-background">Substation Telemetry</h3>
+<p class="text-on-surface-variant font-body-md text-sm mb-4 line-clamp-3">
+                            Implementation of a remote monitoring system for high-voltage transformers, enabling predictive maintenance and reducing downtime.
+                        </p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant">
+<span class="text-label-sm font-label-sm text-outline">Client: CPFL Energia</span>
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group bg-white border border-outline-variant rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
+<div class="aspect-square relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a robotic arm in an automotive factory, precise spot welding on a car chassis. Sparks fly in a controlled environment, illuminated by cool blue and bright white LED task lights. The setting is a state-of-the-art manufacturing facility. The focus is on the mechanical precision and technical prowess of the automation, rendered in a crisp, high-contrast industrial photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAebHCr1uczMfctWVRSqJioxQDjHo7nCOaOJkiBrF4iIXtQGYR37Hh71riN2K5xgfTGvH0YFPc5VTF8Npin1ZHV2qrSOyvQGgkquhTS1vvrl2FA3uBsAIug6SiDGr11lHxTdgwegNtWAs_T0Ekvun8tnnAwsdeR3h2SInqHDXC3BDxl_aNOM1wM_2ym23Puf0QoiP4h0FG6NiwhZ1bXX0Xv9fNU4-XtedI3DnNI3hFIPGlWQNAv4aDqGg')"></div>
+</div>
+<div class="p-6 flex-grow">
+<span class="bg-surface-container-high text-on-secondary-container px-2 py-1 rounded-sm font-label-sm text-label-sm uppercase tracking-wider">Automotive</span>
+<h3 class="font-title-md text-title-md mt-3 mb-2 text-on-background">Chassis Welding Cell</h3>
+<p class="text-on-surface-variant font-body-md text-sm mb-4 line-clamp-3">
+                            Integration of robotic arms with synchronized PLC controls for high-precision chassis spot welding in a Tier 1 supplier plant.
+                        </p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant">
+<span class="text-label-sm font-label-sm text-outline">Client: Magna Int.</span>
+<span class="material-symbols-outlined text-primary">smart_toy</span>
+</div>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="group bg-white border border-outline-variant rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
+<div class="aspect-square relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A clean, futuristic control room with multiple large monitors displaying complex technical diagrams, SCADA interfaces, and real-time data visualizations of a food processing plant. An operator is seen from behind, sitting in a modern ergonomic chair. The room is softly lit with indirect white light and blue glow from the screens, conveying a sense of ultimate oversight and technical control." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADrQaeUHdMokuQjfIz_aEwLV_SOoQPg0s7LoLbn-Xfz1aHOK5ToE3UzRvzloXH1yvbFC4CakzI-vFnDzNAFGVQfZOyI5osoNLAiPrnJuFmz_9N6XDIrDyqqAysPf3sEWB0bHOG9P-4gjy78Y0s2hB4tJwfkPJ2WDugErjCf7uYyJls2jJ89WIrJ1YreYbZOZDDIHGbvvx0owT2uW5MX4jEf3QB1eZPhoTcJnUyCauG2KL0p1-zxj4F0g')"></div>
+</div>
+<div class="p-6 flex-grow">
+<span class="bg-surface-container-high text-on-secondary-container px-2 py-1 rounded-sm font-label-sm text-label-sm uppercase tracking-wider">Food &amp; Beverage</span>
+<h3 class="font-title-md text-title-md mt-3 mb-2 text-on-background">SCADA System Overhaul</h3>
+<p class="text-on-surface-variant font-body-md text-sm mb-4 line-clamp-3">
+                            Enterprise-wide SCADA implementation providing real-time data visibility across three different production facilities.
+                        </p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant">
+<span class="text-label-sm font-label-sm text-outline">Client: Cargill</span>
+<span class="material-symbols-outlined text-primary">monitoring</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-24 bg-primary py-24">
+<div class="max-w-container-max-width mx-auto px-margin-desktop text-center">
+<h2 class="font-display-lg text-display-lg text-white mb-6">Ready to automate your operations?</h2>
+<p class="text-primary-fixed-dim font-body-md text-body-md mb-10 max-w-2xl mx-auto">
+                    Let's discuss how our precision engineering can optimize your industrial processes. Our team of experts is ready to build your next-generation solution.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-white text-primary font-title-md py-4 px-10 rounded-lg hover:bg-surface-container-low transition-all active:scale-95">Get Started</button>
+<button class="border border-white text-white font-title-md py-4 px-10 rounded-lg hover:bg-white/10 transition-all">Download Portfolio PDF</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-on-background dark:bg-surface-container-lowest w-full py-16">
+<div class="max-w-container-max-width mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="md:col-span-1">
+<h2 class="font-headline-lg text-headline-lg text-surface dark:text-on-surface mb-4">ISA Engenharia</h2>
+<p class="text-surface-variant dark:text-on-surface-variant font-body-md text-body-md">
+                    Leading the industry in automation integration and technical precision for over 20 years.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-title-md text-title-md">Navigation</h4>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary-container transition-colors" href="#">Privacy Policy</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary-container transition-colors" href="#">Terms of Service</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary-container transition-colors" href="#">Technical Support</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary-container transition-colors" href="#">Career</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-title-md text-title-md">Contact</h4>
+<p class="text-surface-variant dark:text-on-surface-variant">São Paulo, Brazil</p>
+<p class="text-surface-variant dark:text-on-surface-variant">+55 (11) 5555-0100</p>
+<p class="text-surface-variant dark:text-on-surface-variant">contact@isaeng.com.br</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-title-md text-title-md">Follow Us</h4>
+<div class="flex gap-4">
+<a class="text-surface-variant hover:text-white transition-colors" href="#">LinkedIn</a>
+<a class="text-surface-variant hover:text-white transition-colors" href="#">Instagram</a>
+<a class="text-surface-variant hover:text-white transition-colors" href="#">YouTube</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max-width mx-auto px-margin-desktop mt-16 pt-8 border-t border-white/10">
+<p class="text-surface-variant dark:text-on-surface-variant font-body-md text-body-md">© 2024 ISA Engenharia. Precision in Automation.</p>
+</div>
+</footer>
+<script>
+        // Simple filter interaction
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active', 'bg-primary', 'text-white'));
+                filterBtns.forEach(b => b.classList.add('border-outline-variant', 'text-secondary'));
+                
+                btn.classList.add('active');
+                btn.classList.remove('border-outline-variant', 'text-secondary');
+                btn.classList.add('bg-primary', 'text-white');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('py-2', 'shadow-md');
+                nav.classList.remove('h-20');
+            } else {
+                nav.classList.remove('py-2', 'shadow-md');
+                nav.classList.add('h-20');
+            }
+        });
+    </script>
+</body></html>
